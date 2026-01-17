@@ -1,0 +1,67 @@
+name: Deploy  to GitHub Pages
+
+on:
+  # push:
+  #   branches: [master, main]
+  #   paths:
+  #     - 'src/**'
+  #     - 'static/**'
+  #     - 'package.json'
+  #     - 'svelte.config.js'
+  #     - 'vite.config.ts'
+  # workflow_run:
+  #     workflows: ["Test cyberforce build process"]
+  #     types:
+  #       - completed
+  
+  workflow_dispatch:
+
+jobs:
+  build_site:
+    # if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        env:
+          VITE_BASE_URL: "/${{ github.event.repository.name }}"
+        run: pnpm run build
+
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "build/"            # change if your output directory is e.g. "dist/"
+
+  deploy:
+    needs: build_site
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
