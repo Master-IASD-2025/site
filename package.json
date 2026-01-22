@@ -24,6 +24,7 @@
 		"@tanstack/table-core": "^8.21.3",
 		"bits-ui": "^2.14.4",
 		"clsx": "^2.1.1",
+		"mdsvex": "^0.12.6",
 		"svelte": "^5.45.6",
 		"svelte-check": "^4.3.4",
 		"tailwind-merge": "^3.4.0",
