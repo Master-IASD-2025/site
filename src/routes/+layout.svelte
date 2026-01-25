@@ -25,13 +25,19 @@
   <header
     class="bg-background/80 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full backdrop-blur-xl border-b border-border/40"
   >
-    <div class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+    <div
+      class="container mx-auto flex h-16 items-center justify-between px-4 md:px-6"
+    >
       <div class="flex items-center gap-8">
         <a href="/" class="flex items-center gap-2.5 group">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+          <div
+            class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10"
+          >
             <GraduationCap class="h-5 w-5 text-primary" />
           </div>
-          <span class="hidden font-semibold tracking-tight sm:inline-block text-foreground">
+          <span
+            class="hidden font-semibold tracking-tight sm:inline-block text-foreground"
+          >
             IASD Community
           </span>
         </a>
@@ -60,7 +66,12 @@
             <Github class="h-[1.1rem] w-[1.1rem]" />
             <span class="sr-only">GitHub</span>
           </Button>
-          <Button onclick={toggleMode} variant="ghost" size="icon" class="rounded-lg hover:bg-muted/50">
+          <Button
+            onclick={toggleMode}
+            variant="ghost"
+            size="icon"
+            class="rounded-lg hover:bg-muted/50"
+          >
             <Sun
               class="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"
             />
