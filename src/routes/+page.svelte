@@ -1,278 +1,247 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
-  import * as Accordion from "$lib/components/ui/accordion";
   import Button from "$lib/components/ui/button/button.svelte";
   import Badge from "$lib/components/ui/badge/badge.svelte";
   import {
     Brain,
-    Database,
-    Network,
-    Cpu,
-    BookOpen,
-    GraduationCap,
     BarChart,
-    Code,
     ArrowRight,
-    Server,
-    Globe,
-    Lightbulb,
+    Github,
     Users,
     Sparkles,
     MessageSquare,
     Eye,
-    Target,
-    Zap,
-    Briefcase,
-    Share2,
-    Layers,
     Rocket,
+    BookOpen,
+    FolderGit2,
+    FileText,
+    Heart,
   } from "@lucide/svelte";
 
-  const scopeOfWork = [
+  const projects = [
     {
-      title: "Machine Learning & Deep Learning",
+      title: "ML Pipeline Framework",
+      description:
+        "Production-ready machine learning pipeline with automated training, evaluation, and deployment workflows.",
+      category: "Machine Learning",
+      categoryColor: "primary",
+      contributors: 8,
       icon: Brain,
-      description: "Building models that learn from data.",
     },
     {
-      title: "Data Analysis & Visualization",
-      icon: BarChart,
-      description: "Extracting insights and telling stories with data.",
-    },
-    {
-      title: "Natural Language Processing",
+      title: "NLP Research Toolkit",
+      description:
+        "Comprehensive toolkit for natural language processing experiments and research on Moroccan dialects.",
+      category: "Research",
+      categoryColor: "warning",
+      contributors: 5,
       icon: MessageSquare,
-      description: "Understanding and generating human language.",
+    },
+    {
+      title: "Data Viz Dashboard",
+      description:
+        "Interactive dashboard for visualizing complex datasets with real-time analytics and insights.",
+      category: "Data Science",
+      categoryColor: "success",
+      contributors: 6,
+      icon: BarChart,
+    },
+  ];
+
+  const stats = [
+    { value: "20+", label: "Contributors", icon: Users },
+    { value: "12", label: "Projects", icon: FolderGit2 },
+    { value: "3", label: "Papers", icon: FileText },
+    { value: "100%", label: "Student Owned", icon: Heart },
+  ];
+
+  const scopeAreas = [
+    {
+      title: "Machine Learning",
+      description: "Building models that learn from data",
+      icon: Brain,
+    },
+    {
+      title: "Data Analysis",
+      description: "Extracting insights from complex datasets",
+      icon: BarChart,
+    },
+    {
+      title: "NLP Research",
+      description: "Understanding human language",
+      icon: MessageSquare,
     },
     {
       title: "Computer Vision",
+      description: "Teaching machines to see",
       icon: Eye,
-      description: "Enabling machines to see and interpret the visual world.",
     },
     {
-      title: "Applied AI Systems",
+      title: "Applied AI",
+      description: "Real-world problem solving",
       icon: Rocket,
-      description: "Real-world applications solving tangible problems.",
     },
     {
-      title: "Research Experiments",
+      title: "Research",
+      description: "Exploring new frontiers",
       icon: BookOpen,
-      description: "Exploring new frontiers in AI science.",
-    },
-  ];
-
-  const goals = [
-    {
-      title: "Impactful Open Source",
-      description:
-        "Build projects that matter and contribute to the global ecosystem.",
-      icon: Globe,
-      tags: ["Open Source", "Impact"],
-    },
-    {
-      title: "Learning by Building",
-      description:
-        "Encourage learning through real implementation and collaboration.",
-      icon: Code,
-      tags: ["Practice", "Hands-on"],
-    },
-    {
-      title: "Industry Workflows",
-      description: "Apply modern best practices and bridging the academic gap.",
-      icon: Briefcase,
-      tags: ["Professional", "Best Practices"],
-    },
-    {
-      title: "Portfolio Ready",
-      description: "Create public work that demonstrates student skills.",
-      icon: Layers,
-      tags: ["Career", "Showcase"],
-    },
-    {
-      title: "Knowledge Sharing",
-      description: "Promoting peer learning and open transparency.",
-      icon: Share2,
-      tags: ["Community", "Education"],
-    },
-    {
-      title: "Solutions for Morocco",
-      description:
-        "Contributing to AI solutions relevant to our local context.",
-      icon: Database, // Used as placeholder for 'context'
-      tags: ["Local", "Relevance"],
-    },
-  ];
-
-  const principles = [
-    {
-      title: "Collaboration over Competition",
-      description: "We go further when we go together.",
-    },
-    {
-      title: "Learning through Building",
-      description: "We learn best by doing.",
-    },
-    {
-      title: "Open Knowledge",
-      description: "Transparency in process and outcome.",
-    },
-    {
-      title: "Respectful Communication",
-      description: "Constructive feedback and safe space.",
-    },
-    {
-      title: "Quality & Responsibility",
-      description: "Taking pride in well-crafted contributions.",
     },
   ];
 </script>
 
 <div class="flex min-h-screen flex-col">
   <!-- Hero Section -->
-  <section
-    class="relative flex flex-col items-center justify-center py-20 text-center md:py-28 lg:py-36 overflow-hidden"
-  >
-    <!-- Subtle background pattern -->
-    <div class="absolute inset-0 -z-10">
+  <section class="relative overflow-hidden py-28 md:py-36 lg:py-48">
+    <!-- Background glow effects -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
       <div
-        class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+        class="absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[140px]"
       ></div>
       <div
-        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl"
+        class="absolute bottom-1/3 right-1/4 h-80 w-80 rounded-full bg-primary/5 blur-[100px]"
       ></div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="flex flex-col items-center space-y-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <!-- Status badge -->
         <div
-          class="inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/30 px-4 py-1.5 text-sm text-muted-foreground"
+          class="mb-8 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/50 px-4 py-1.5 text-sm backdrop-blur-sm"
         >
           <span class="relative flex h-2 w-2">
             <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75"
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-chart-2 opacity-75"
             ></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-chart-2"
             ></span>
           </span>
-          Student-led Open Source Initiative
+          <span class="text-muted-foreground">Open Source Initiative</span>
         </div>
 
-        <div class="space-y-4">
-          <h1
-            class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+        <!-- Heading -->
+        <h1
+          class="mb-8 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+        >
+          <span class="text-foreground">AI & Data Science</span>
+          <br />
+          <span
+            class="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent"
+            >Community</span
           >
-            AI & Data Science
-            <span class="block text-primary">Community</span>
-          </h1>
-          <p
-            class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl"
-          >
-            A community by the AI and Data Science Master at FST Tanger.
-            Transforming learning into contribution and ideas into impact.
-          </p>
-        </div>
+        </h1>
 
-        <div class="flex flex-col gap-3 sm:flex-row sm:gap-4 pt-4">
-          <Button size="lg" class="gap-2 px-6 rounded-full">
-            <Sparkles class="h-4 w-4" /> View Projects
-          </Button>
-          <Button size="lg" variant="outline" class="gap-2 px-6 rounded-full">
-            <MessageSquare class="h-4 w-4" /> Join Us
-          </Button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision Section -->
-  <section class="w-full py-20 md:py-28 border-t border-border/40">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-        <div class="flex flex-col justify-center space-y-6">
-          <div
-            class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary w-fit"
-          >
-            <Target class="h-3.5 w-3.5" />
-            Our Vision
-          </div>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            From Learners to Contributors
-          </h2>
-          <p class="text-muted-foreground text-lg leading-relaxed">
-            We believe that students are not only learners, but also
-            contributors to the global AI ecosystem. Our vision is to build a
-            strong, collaborative AI community that produces high-quality
-            open-source projects and helps position Moroccan talent on the
-            international stage.
-          </p>
-          <blockquote
-            class="border-l-2 border-primary/50 pl-4 italic text-muted-foreground"
-          >
-            "Our purpose is creating meaningful open-source impact in Artificial
-            Intelligence and Data Science, while giving real practical value to
-            students."
-          </blockquote>
-        </div>
-        <div class="flex items-center justify-center">
-          <div
-            class="relative bg-muted/30 flex aspect-square w-full max-w-sm items-center justify-center rounded-2xl border border-border/60 p-8"
-          >
-            <div
-              class="absolute inset-4 rounded-xl border border-dashed border-border/60"
-            ></div>
-            <div class="text-center space-y-3">
-              <Globe class="h-16 w-16 text-primary/40 mx-auto" />
-              <span class="block text-lg font-semibold text-muted-foreground/60"
-                >Moroccan Talent</span
-              >
-              <span class="block text-sm text-muted-foreground/40"
-                >On the International Stage</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Goals Section -->
-  <section class="w-full py-20 md:py-28 bg-muted/20 border-t border-border/40">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="mx-auto mb-16 max-w-2xl text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-          Our Goals
-        </h2>
-        <p class="text-muted-foreground text-lg">
-          We aim to bridge the gap between academic knowledge and real-world
-          application.
+        <!-- Description -->
+        <p
+          class="mb-12 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl"
+        >
+          A student-led open source community by the AI and Data Science Master
+          at FST Tanger. Transforming learning into contribution and ideas into
+          impact.
         </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <Button size="lg" class="gap-2 font-medium">
+            <Sparkles class="h-4 w-4" />
+            Explore Projects
+          </Button>
+          <Button size="lg" variant="outline" class="gap-2 font-medium">
+            <Github class="h-4 w-4" />
+            View on GitHub
+          </Button>
+        </div>
       </div>
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {#each goals as goal}
-          {@const Icon = goal.icon}
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="border-y border-border/40 bg-card/30 py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-12 md:grid-cols-4">
+        {#each stats as stat}
+          {@const Icon = stat.icon}
+          <div class="text-center">
+            <div
+              class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10"
+            >
+              <Icon class="h-5 w-5 text-primary" />
+            </div>
+            <div class="text-3xl font-bold text-foreground md:text-4xl">
+              {stat.value}
+            </div>
+            <div class="text-sm text-muted-foreground">{stat.label}</div>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-24 md:py-32">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div>
+          <h2 class="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
+            Featured Projects
+          </h2>
+          <p class="text-muted-foreground">
+            Real projects built by our community members
+          </p>
+        </div>
+        <Button variant="ghost" class="gap-2 self-start sm:self-auto">
+          View All Projects
+          <ArrowRight class="h-4 w-4" />
+        </Button>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {#each projects as project}
+          {@const Icon = project.icon}
           <Card.Root
-            class="flex flex-col h-full bg-background/60 border-border/60 hover:border-border transition-colors"
+            class="group flex flex-col overflow-hidden border-border/60 bg-card/50 transition-all hover:border-primary/40 hover:bg-card hover:shadow-lg hover:shadow-primary/5"
           >
-            <Card.Header class="pb-3">
-              <div
-                class="bg-primary/10 text-primary mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
-              >
-                <Icon class="h-5 w-5" />
+            <Card.Header class="pb-5">
+              <div class="mb-5 flex items-center justify-between">
+                <Badge
+                  variant="secondary"
+                  class={project.categoryColor === "primary"
+                    ? "border-primary/20 bg-primary/10 text-primary"
+                    : project.categoryColor === "warning"
+                      ? "border-chart-3/20 bg-chart-3/10 text-chart-3"
+                      : "border-chart-2/20 bg-chart-2/10 text-chart-2"}
+                >
+                  {project.category}
+                </Badge>
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted/50"
+                >
+                  <Icon class="h-5 w-5 text-muted-foreground" />
+                </div>
               </div>
-              <Card.Title class="text-lg">{goal.title}</Card.Title>
-              <Card.Description class="pt-1 text-sm leading-relaxed">
-                {goal.description}
+              <Card.Title class="text-lg">{project.title}</Card.Title>
+              <Card.Description class="line-clamp-2 text-sm leading-relaxed">
+                {project.description}
               </Card.Description>
             </Card.Header>
-            <Card.Content class="mt-auto pt-0">
-              <div class="flex flex-wrap gap-1.5">
-                {#each goal.tags as tag}
-                  <Badge variant="secondary" class="text-xs font-normal"
-                    >{tag}</Badge
-                  >
-                {/each}
+            <Card.Footer class="mt-auto border-t border-border/40 pt-4">
+              <div class="flex w-full items-center justify-between">
+                <div
+                  class="flex items-center gap-2 text-sm text-muted-foreground"
+                >
+                  <Users class="h-4 w-4" />
+                  <span>{project.contributors} contributors</span>
+                </div>
+                <a
+                  href="#"
+                  class="flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                >
+                  <Github class="h-4 w-4" />
+                  <span>View</span>
+                </a>
               </div>
-            </Card.Content>
+            </Card.Footer>
           </Card.Root>
         {/each}
       </div>
@@ -280,30 +249,37 @@
   </section>
 
   <!-- Scope of Work -->
-  <section class="w-full py-20 md:py-28 border-t border-border/40">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="mx-auto mb-16 max-w-2xl text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-          Scope of Work
+  <section class="border-t border-border/40 bg-card/20 py-28 md:py-36">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto mb-20 max-w-3xl text-center">
+        <h2
+          class="mb-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+        >
+          What We Work On
         </h2>
-        <p class="text-muted-foreground text-lg">
-          Key areas where we focus our efforts and experiments.
+        <p class="text-lg text-muted-foreground md:text-xl">
+          Key areas where we focus our efforts and experiments
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {#each scopeOfWork as scope}
-          {@const Icon = scope.icon}
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {#each scopeAreas as area}
+          {@const Icon = area.icon}
           <div
-            class="group flex items-start gap-4 rounded-xl border border-border/60 bg-background/50 p-5 hover:bg-muted/30 transition-colors"
+            class="group flex items-center gap-5 rounded-xl border border-border/60 bg-background/50 p-6 transition-all hover:border-primary/40 hover:bg-card/50 hover:shadow-md"
           >
             <div
-              class="bg-primary/10 text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20"
             >
-              <Icon class="h-5 w-5" />
+              <Icon class="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 class="font-semibold mb-1">{scope.title}</h3>
-              <p class="text-sm text-muted-foreground">{scope.description}</p>
+              <h3 class="mb-1 text-lg font-semibold text-foreground">
+                {area.title}
+              </h3>
+              <p class="text-sm leading-relaxed text-muted-foreground">
+                {area.description}
+              </p>
             </div>
           </div>
         {/each}
@@ -311,76 +287,69 @@
     </div>
   </section>
 
-  <!-- Principles Section -->
-  <section class="w-full py-20 md:py-28 bg-muted/20 border-t border-border/40">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-          Community Principles
-        </h2>
-        <p class="text-muted-foreground text-lg">
-          The values that guide our collaboration and growth.
-        </p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {#each principles as principle, i}
-          <div
-            class="flex items-center gap-3 rounded-full border border-border/60 bg-background/60 px-5 py-3"
-          >
-            <span
-              class="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary"
-            >
-              {i + 1}
-            </span>
-            <span class="font-medium text-sm">{principle.title}</span>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA / Who This Is For -->
-  <section class="py-20 md:py-28 border-t border-border/40">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="mx-auto max-w-3xl text-center">
+  <!-- CTA Section -->
+  <section class="py-28 md:py-36">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-border/60 bg-card/50 p-10 md:p-16 lg:p-20"
+      >
+        <!-- Background glow -->
         <div
-          class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-primary/10 mb-6"
-        >
-          <Users class="h-7 w-7 text-primary" />
+          class="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-primary/10 blur-[120px]"
+        ></div>
+
+        <div class="relative mx-auto max-w-3xl text-center">
+          <div
+            class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10"
+          >
+            <Users class="h-10 w-10 text-primary" />
+          </div>
+          <h2
+            class="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+          >
+            Join the Community
+          </h2>
+          <p
+            class="mb-10 text-lg leading-relaxed text-muted-foreground md:text-xl"
+          >
+            Open to students of the AI and Data Science Master at FST Tanger and
+            motivated contributors who share our values. Skill level is not a
+            barrier —
+            <span class="text-primary"
+              >commitment, curiosity, and consistency</span
+            > matter more.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <Button size="lg" class="gap-2">
+              Get Started
+              <ArrowRight class="h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline" class="gap-2">
+              <Github class="h-4 w-4" />
+              GitHub Organization
+            </Button>
+          </div>
         </div>
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-          Who This Is For
-        </h2>
-        <p class="text-muted-foreground mb-6 text-lg leading-relaxed">
-          Primarily for students of the AI and Data Science Master at FST
-          Tanger, as well as motivated contributors who share our values.
-        </p>
-        <p class="text-foreground font-medium mb-10 text-xl">
-          Skill level is not a barrier.<br class="hidden sm:block" />
-          <span class="text-primary"
-            >Commitment, curiosity, and consistency</span
-          > matter more.
-        </p>
-        <Button
-          size="lg"
-          variant="default"
-          href="https://github.com/Master-IASD-2025"
-          class="rounded-full px-8"
-        >
-          Join the Initiative
-        </Button>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-border/40 py-8">
-    <div class="container mx-auto px-4 md:px-6">
-      <div
-        class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"
-      >
-        <p>© {new Date().getFullYear()} IASD Community — FST Tanger</p>
-        <p>Built with passion by students, for students.</p>
+  <footer class="border-t border-border/40 py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <div class="flex items-center gap-2.5">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-md bg-primary"
+          >
+            <span class="text-sm font-bold text-primary-foreground">IA</span>
+          </div>
+          <span class="font-semibold text-foreground">MASTER IASD</span>
+        </div>
+        <p class="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} IASD Community — FST Tanger. Built by students,
+          for students.
+        </p>
       </div>
     </div>
   </footer>
