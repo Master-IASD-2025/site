@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "slug": "getting-started-ml-pipelines",
+      "title": "Getting Started with Machine Learning Pipelines",
+      "excerpt": "Learn how to build production-ready ML pipelines using modern tools and best practices. We cover data preprocessing, model training, and deployment strategies.",
+      "author": "Sarah Bennani",
+      "date": "2026-01-20",
+      "readTime": "8 min read",
+      "category": "Machine Learning",
+      "tags": ["ML", "Python", "MLOps"],
+      "featured": true,
+      "published": true
+    },
+    {
+      "slug": "nlp-moroccan-darija",
+      "title": "Natural Language Processing for Moroccan Darija",
+      "excerpt": "Exploring the challenges and opportunities in building NLP models for Moroccan Arabic dialect. A deep dive into our research project.",
+      "author": "Youssef Alami",
+      "date": "2026-01-15",
+      "readTime": "12 min read",
+      "category": "Research",
+      "tags": ["NLP", "Darija", "Research"],
+      "featured": true,
+      "published": true
+    },
+    {
+      "slug": "data-visualization-best-practices",
+      "title": "Data Visualization Best Practices",
+      "excerpt": "Create compelling and insightful data visualizations that tell a story. Tips and techniques from our data science team.",
+      "author": "Fatima Zahra",
+      "date": "2026-01-10",
+      "readTime": "6 min read",
+      "category": "Data Science",
+      "tags": ["Visualization", "Python", "D3.js"],
+      "featured": false,
+      "published": true
+    }
+  ],
+  "lastUpdated": "2026-01-20T00:00:00Z"
+}
