@@ -350,24 +350,4 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-border/40 py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-        <div class="flex items-center gap-2.5">
-          <div
-            class="flex h-8 w-8 items-center justify-center rounded-md bg-primary"
-          >
-            <span class="text-sm font-bold text-primary-foreground">IA</span>
-          </div>
-          <span class="font-semibold text-foreground">MASTER IASD</span>
-        </div>
-        <p class="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} IASD Community — FST Tanger. Built by students,
-          for students.
-        </p>
-      </div>
-    </div>
-  </footer>
 </div>
