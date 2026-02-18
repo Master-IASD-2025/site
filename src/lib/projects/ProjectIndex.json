@@ -1,0 +1,149 @@
+{
+  "projects": [
+    {
+      "slug": "ml-pipeline-framework",
+      "title": "ML Pipeline Framework",
+      "description": "Production-ready machine learning pipeline with automated training, evaluation, and deployment workflows. Built to handle large-scale datasets with reproducible experiments.",
+      "longDescription": "The ML Pipeline Framework is a comprehensive toolkit designed to streamline the machine learning workflow from data ingestion to production deployment. It provides standardized interfaces for data preprocessing, feature engineering, model training, evaluation, and monitoring. The framework supports multiple ML backends including scikit-learn, PyTorch, and TensorFlow, making it versatile for various use cases within the IASD community.",
+      "category": "Machine Learning",
+      "status": "active",
+      "contributors": 8,
+      "stars": 42,
+      "icon": "Brain",
+      "tags": ["Python", "MLOps", "PyTorch", "scikit-learn", "Docker"],
+      "techStack": ["Python 3.11", "PyTorch", "scikit-learn", "MLflow", "Docker", "GitHub Actions"],
+      "githubUrl": "https://github.com/Master-IASD-2025",
+      "featured": true,
+      "published": true,
+      "startDate": "2025-09-01",
+      "highlights": [
+        "Automated hyperparameter tuning with Optuna",
+        "Built-in experiment tracking with MLflow",
+        "Docker-based reproducible environments",
+        "CI/CD pipeline with GitHub Actions",
+        "Support for distributed training"
+      ]
+    },
+    {
+      "slug": "nlp-darija-toolkit",
+      "title": "NLP Darija Research Toolkit",
+      "description": "Comprehensive toolkit for natural language processing experiments and research on Moroccan Arabic dialect. Includes tokenization, sentiment analysis, and language models.",
+      "longDescription": "The NLP Darija Research Toolkit addresses the significant challenge of processing Moroccan Arabic (Darija) — a dialect that blends Arabic, Berber, French, and Spanish influences. Our team has developed specialized tokenizers, pre-trained embeddings, and fine-tuned transformer models for tasks like sentiment analysis, text classification, and named entity recognition in Darija.",
+      "category": "Research",
+      "status": "active",
+      "contributors": 5,
+      "stars": 67,
+      "icon": "MessageSquare",
+      "tags": ["NLP", "Darija", "Transformers", "Research", "Arabic"],
+      "techStack": ["Python", "HuggingFace Transformers", "PyTorch", "spaCy", "Jupyter"],
+      "githubUrl": "https://github.com/Master-IASD-2025",
+      "featured": true,
+      "published": true,
+      "startDate": "2025-10-01",
+      "highlights": [
+        "Custom Darija tokenizer handling code-switching",
+        "Pre-trained BERT model fine-tuned on Darija corpus",
+        "Sentiment analysis with 85% accuracy",
+        "Named entity recognition for Moroccan entities",
+        "Open dataset of 50k annotated Darija sentences"
+      ]
+    },
+    {
+      "slug": "data-viz-dashboard",
+      "title": "Data Viz Dashboard",
+      "description": "Interactive dashboard for visualizing complex datasets with real-time analytics and insights. Built with modern web technologies for seamless data exploration.",
+      "longDescription": "The Data Viz Dashboard is a full-stack web application that enables researchers and analysts to upload, explore, and visualize complex datasets without writing code. It features an intuitive drag-and-drop interface, a rich library of chart types, and real-time collaboration features. The backend leverages Python data science libraries while the frontend delivers a smooth, responsive experience.",
+      "category": "Data Science",
+      "status": "completed",
+      "contributors": 6,
+      "stars": 31,
+      "icon": "BarChart",
+      "tags": ["Data Science", "Visualization", "D3.js", "Python", "FastAPI"],
+      "techStack": ["SvelteKit", "D3.js", "Python", "FastAPI", "PostgreSQL", "Redis"],
+      "githubUrl": "https://github.com/Master-IASD-2025",
+      "featured": true,
+      "published": true,
+      "startDate": "2025-11-01",
+      "highlights": [
+        "30+ interactive chart types",
+        "Real-time data streaming with WebSockets",
+        "Export to PNG, SVG, and PDF",
+        "Collaborative annotations and sharing",
+        "AI-powered chart recommendations"
+      ]
+    },
+    {
+      "slug": "computer-vision-lab",
+      "title": "Computer Vision Lab",
+      "description": "Experimental platform for computer vision research including object detection, image segmentation, and visual recognition tasks tailored for Moroccan contexts.",
+      "longDescription": "The Computer Vision Lab provides a shared infrastructure for running CV experiments at scale. It includes pre-configured environments for popular frameworks like OpenCV, YOLO, and Detectron2, along with a dataset repository of locally-collected imagery. The lab has been used to develop models for agricultural monitoring, traffic analysis, and cultural heritage digitization.",
+      "category": "Computer Vision",
+      "status": "active",
+      "contributors": 7,
+      "stars": 29,
+      "icon": "Eye",
+      "tags": ["Computer Vision", "YOLO", "PyTorch", "OpenCV", "Detection"],
+      "techStack": ["Python", "PyTorch", "OpenCV", "YOLO v8", "Detectron2", "CUDA"],
+      "githubUrl": "https://github.com/Master-IASD-2025",
+      "featured": false,
+      "published": true,
+      "startDate": "2025-10-15",
+      "highlights": [
+        "Custom dataset for Moroccan license plate detection",
+        "Agricultural crop disease detection model",
+        "Real-time object detection pipeline",
+        "Model optimization for edge deployment",
+        "Integration with drone imagery"
+      ]
+    },
+    {
+      "slug": "community-platform",
+      "title": "Community Platform",
+      "description": "The very website you're on — an open-source community hub built with SvelteKit, TailwindCSS, and modern web technologies by Master IASD students.",
+      "longDescription": "The Community Platform is a meta-project: the website itself. It's an open-source SvelteKit application that serves as the hub for the Master IASD community. Built collaboratively by students, it features a blog system, project showcase, member directory, and event calendar. It demonstrates best practices for modern web development and serves as a learning resource.",
+      "category": "Web Development",
+      "status": "active",
+      "contributors": 12,
+      "stars": 55,
+      "icon": "Globe",
+      "tags": ["SvelteKit", "TailwindCSS", "TypeScript", "Open Source"],
+      "techStack": ["SvelteKit 5", "Svelte 5 Runes", "TailwindCSS 4", "TypeScript", "Bun"],
+      "githubUrl": "https://github.com/Master-IASD-2025/master-iasd-2025.github.io",
+      "featured": false,
+      "published": true,
+      "startDate": "2025-09-15",
+      "highlights": [
+        "Built with Svelte 5 runes (cutting-edge syntax)",
+        "shadcn-svelte component library integration",
+        "Runtime blog system with Markdown support",
+        "Dark/light theme with persistent preference",
+        "Fully accessible and responsive design"
+      ]
+    },
+    {
+      "slug": "ai-course-assistant",
+      "title": "AI Course Assistant",
+      "description": "An intelligent tutoring system that helps Master IASD students with course material, exercises, and exam preparation using RAG and LLM techniques.",
+      "longDescription": "The AI Course Assistant is a RAG-based (Retrieval Augmented Generation) tutoring system specifically designed for the Master IASD curriculum. It ingests course materials, lecture notes, and past exam papers to provide contextually accurate answers and explanations. The system can generate practice problems, provide step-by-step solutions, and track student progress.",
+      "category": "Applied AI",
+      "status": "in-progress",
+      "contributors": 4,
+      "stars": 18,
+      "icon": "Rocket",
+      "tags": ["LLM", "RAG", "OpenAI", "LangChain", "Education"],
+      "techStack": ["Python", "LangChain", "OpenAI API", "Chroma DB", "FastAPI", "Next.js"],
+      "githubUrl": "https://github.com/Master-IASD-2025",
+      "featured": false,
+      "published": true,
+      "startDate": "2026-01-01",
+      "highlights": [
+        "RAG pipeline over course PDFs and notes",
+        "Exam question generation with difficulty levels",
+        "Personalized learning path recommendations",
+        "Integration with course management system",
+        "Multi-language support (French, English, Arabic)"
+      ]
+    }
+  ],
+  "lastUpdated": "2026-02-18T00:00:00Z"
+}
