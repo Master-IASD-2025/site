@@ -28,6 +28,7 @@
 
   const projects = [
     {
+      slug: "ml-pipeline-framework",
       title: "ML Pipeline Framework",
       description:
         "Production-ready machine learning pipeline with automated training, evaluation, and deployment workflows.",
@@ -37,6 +38,7 @@
       icon: Brain,
     },
     {
+      slug: "nlp-darija-toolkit",
       title: "NLP Research Toolkit",
       description:
         "Comprehensive toolkit for natural language processing experiments and research on Moroccan dialects.",
@@ -46,6 +48,7 @@
       icon: MessageSquare,
     },
     {
+      slug: "data-viz-dashboard",
       title: "Data Viz Dashboard",
       description:
         "Interactive dashboard for visualizing complex datasets with real-time analytics and insights.",
@@ -216,50 +219,51 @@
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {#each projects as project}
           {@const Icon = project.icon}
-          <Card.Root
-            class="group flex flex-col overflow-hidden border-border/60 bg-card/50 transition-all hover:border-primary/40 hover:bg-card hover:shadow-lg hover:shadow-primary/5"
-          >
-            <Card.Header class="pb-5">
-              <div class="mb-5 flex items-center justify-between">
-                <Badge
-                  variant="secondary"
-                  class={project.categoryColor === "primary"
-                    ? "border-primary/20 bg-primary/10 text-primary"
-                    : project.categoryColor === "warning"
-                      ? "border-chart-3/20 bg-chart-3/10 text-chart-3"
-                      : "border-chart-2/20 bg-chart-2/10 text-chart-2"}
-                >
-                  {project.category}
-                </Badge>
-                <div
-                  class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted/50"
-                >
-                  <Icon class="h-5 w-5 text-muted-foreground" />
+          <a href="/projects/{project.slug}" class="group block">
+            <Card.Root
+              class="flex h-full flex-col overflow-hidden border-border/60 bg-card/50 transition-all hover:border-primary/40 hover:bg-card hover:shadow-lg hover:shadow-primary/5"
+            >
+              <Card.Header class="pb-5">
+                <div class="mb-5 flex items-center justify-between">
+                  <Badge
+                    variant="secondary"
+                    class={project.categoryColor === "primary"
+                      ? "border-primary/20 bg-primary/10 text-primary"
+                      : project.categoryColor === "warning"
+                        ? "border-chart-3/20 bg-chart-3/10 text-chart-3"
+                        : "border-chart-2/20 bg-chart-2/10 text-chart-2"}
+                  >
+                    {project.category}
+                  </Badge>
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-lg bg-muted/50 transition-colors group-hover:bg-primary/10"
+                  >
+                    <Icon class="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                  </div>
                 </div>
-              </div>
-              <Card.Title class="text-lg">{project.title}</Card.Title>
-              <Card.Description class="line-clamp-2 text-sm leading-relaxed">
-                {project.description}
-              </Card.Description>
-            </Card.Header>
-            <Card.Footer class="mt-auto border-t border-border/40 pt-4">
-              <div class="flex w-full items-center justify-between">
-                <div
-                  class="flex items-center gap-2 text-sm text-muted-foreground"
-                >
-                  <Users class="h-4 w-4" />
-                  <span>{project.contributors} contributors</span>
+                <Card.Title class="text-lg transition-colors group-hover:text-primary">{project.title}</Card.Title>
+                <Card.Description class="line-clamp-2 text-sm leading-relaxed">
+                  {project.description}
+                </Card.Description>
+              </Card.Header>
+              <Card.Footer class="mt-auto border-t border-border/40 pt-4">
+                <div class="flex w-full items-center justify-between">
+                  <div
+                    class="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
+                    <Users class="h-4 w-4" />
+                    <span>{project.contributors} contributors</span>
+                  </div>
+                  <span
+                    class="flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    <ArrowRight class="h-4 w-4" />
+                    <span>View</span>
+                  </span>
                 </div>
-                <a
-                  href="/projects"
-                  class="flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  <Github class="h-4 w-4" />
-                  <span>View</span>
-                </a>
-              </div>
-            </Card.Footer>
-          </Card.Root>
+              </Card.Footer>
+            </Card.Root>
+          </a>
         {/each}
       </div>
     </div>
