@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import Button from "$lib/components/ui/button/button.svelte";
   import Badge from "$lib/components/ui/badge/badge.svelte";
+  import { ShareButton } from "$lib/components/ui/share-button";
   import MarkdownRenderer from "$lib/components/MarkdownRenderer.svelte";
   import {
     getPostMetadata,
@@ -204,9 +205,14 @@
             <ArrowLeft class="h-4 w-4" />
             Back to Blog
           </Button>
-          <div class="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>Share this article</span>
-          </div>
+          <ShareButton
+            url={window.location.href}
+            title={post.title}
+            description={post.excerpt}
+            className=""
+            variant="outline"
+            size="default"
+          />
         </div>
       </div>
     </section>
